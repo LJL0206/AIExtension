@@ -1,3 +1,4 @@
+console.log('🛡️ CORS middleware active');
 import express, { json } from 'express';
 import cors from 'cors';
 import axios from 'axios';
