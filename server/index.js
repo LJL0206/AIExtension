@@ -13,7 +13,12 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins for development; restrict in production
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'X-API-Key']
+}));
+
 app.use(json());
 app.use(morgan('dev'));
 
