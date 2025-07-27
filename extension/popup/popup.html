@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Search Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-search-plus"></i>
+                <h1>AI Search Assistant</h1>
+            </div>
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+                <button class="tab-button" data-tab="history">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </button>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="tab-content active" id="settings-tab">
+                <div class="card">
+                    <h2><i class="fas fa-globe"></i> Language Preferences</h2>
+                    <div class="setting-item">
+                        <label for="language-select">Preferred Language</label>
+                        <select id="language-select" class="styled-select">
+                            <option value="en-US">English (US)</option>
+                            <option value="zh-TW">Chinese (Taiwan)</option>
+                            <option value="zh-CN">Chinese (Mainland)</option>
+                            <option value="ja-JP">Japanese</option>
+                            <option value="ko-KR">Korean</option>
+                            <option value="es-ES">Spanish</option>
+                            <option value="fr-FR">French</option>
+                            <option value="de-DE">German</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-plug"></i> Connection Settings</h2>
+                    <div class="setting-item">
+                        <label for="server-url">Server URL</label>
+                        <input type="text" id="server-url" placeholder="http://localhost:3000">
+                    </div>
+                    <div class="setting-item">
+                        <label for="api-key">API Key</label>
+                        <div class="password-input">
+                            <input type="password" id="api-key" placeholder="Enter your API key">
+                            <button id="toggle-password" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-sliders-h"></i> Assistant Options</h2>
+                    <div class="setting-item toggle-container">
+                        <label for="assistant-toggle">Enable Assistant</label>
+                        <label class="switch">
+                            <input type="checkbox" id="assistant-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button id="save-settings" class="primary-button">
+                    <i class="fas fa-save"></i> Save Settings
+                </button>
+            </div>
+            
+            <div class="tab-content" id="history-tab">
+                <div class="card">
+                    <h2><i class="fas fa-search"></i> Recent Searches</h2>
+                    <div id="history-list" class="history-list">
+                        <p class="empty-history">No recent searches found.</p>
+                    </div>
+                    <button id="clear-history" class="secondary-button">
+                        <i class="fas fa-trash-alt"></i> Clear History
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 AI Search Assistant</p>
+            <div class="success-message" id="success-message">
+                <i class="fas fa-check-circle"></i> Settings saved successfully!
+            </div>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
