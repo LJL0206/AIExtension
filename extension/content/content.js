@@ -1,7 +1,7 @@
 if (!window.__aiSidebarInjected) {
   window.__aiSidebarInjected = true;
 
-  let serverUrl = 'http://localhost:3000';
+ let serverUrl = 'https://ai-search-assistant-chromeextension.onrender.com';
   let clientApiKey = '';
   let lastUrl = location.href;
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
