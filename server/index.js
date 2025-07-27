@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-use(json());
+app.use(json());
 app.use(morgan('dev'));
 
 const authenticate = (req, res, next) => {
