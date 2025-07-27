@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(json());
 app.use(morgan('dev'));
+app.options('*', cors());
 
 const authenticate = (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
